@@ -1,0 +1,19 @@
+<h1>Cursos <span class="carregando-inline" data-ng-show="requesting.buscarCursos"></span></h1>
+
+<hr />
+
+<div class="row">
+    <table class="table table-hover in">
+        <thead>
+            <tr><th>Nome</th></tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="curso in cursos">
+                <td>{{curso.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+

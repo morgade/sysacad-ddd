@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("datetimepicker.css");
+@import url("bootstrap.min.css");
+@import url("font-awesome.min.css");
+@import url("toaster.css");
+
+body{
+    font-family: "Helvetica", sans-serif;
+}
+
+
+.main-view {
+    margin-top: 90px;
+}
+
+.container-fluid>.navbar-header {
+    margin-right: 50px;
+}
+
+.col-top-buffer {
+    margin-top:10px;
+}
+
+.btn-top-buffer {
+    margin-top:5px;
+}
+
+.tab-pane {
+    padding: 10px;
+}
+
+.carregando-conteudo {
+    text-align:center; 
+    margin: auto; 
+    position: fixed;
+    top: 40%; 
+    left: 40%; 
+    width: 20%;
+    background-image: url('../imgs/semi-transbgtransparent.png'); 
+    border-radius: 5px; 
+    padding: 20px;
+    color: #ffffff;
+}
+
+.carregando-container {
+    z-index: 99999; 
+    position:fixed;
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0px ; 
+    left: 0px;
+}
+
+
+.carregando-inline {
+    background-image: url(../imgs/loading-t.gif);
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+}
+
+*[data-ng-show] {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+*[data-ng-show].ng-hide {
+  opacity:0;
+}

@@ -1,0 +1,111 @@
+<h1>Inscrições</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="disciplina" class="control-label">
+                Disciplina:
+                <span class="carregando-inline" data-ng-show="requesting.buscarDisciplinas"></span>
+            </label>
+            <select id="disciplina" class="form-control" 
+                    data-ng-model="disciplina"
+                    data-ng-options="disciplina.nome for disciplina in disciplinas"
+                    data-ng-disabled="requesting.active"></select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="turma" class="control-label">
+                Turma:
+                <span class="carregando-inline" data-ng-show="requesting.buscarTurmas || requesting.buscarTurma"></span>
+            </label>
+            <select id="turma" class="form-control" 
+                    data-ng-model="turma"
+                    data-ng-options="turma.codigo for turma in turmas"
+                    data-ng-disabled="!disciplina || requesting.active"></select>
+        </div>
+    </div>
+    <div class="col-md-4" data-ng-show="turmaCompleta">
+        <div class="input-group">
+            <label for="aluno" class="control-label">
+                Inscrever Aluno:
+            </label>
+        </div>
+        <div class="input-group">
+            <select id="turma" class="form-control" 
+                data-ng-model="aluno"
+                data-ng-options="aluno.nome for aluno in alunos"></select>
+            <div class="input-group-btn">
+                <a class="btn btn-primary" data-ng-click="inscrever()">Inscrever</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" data-ng-show="turmaCompleta">
+        <div class="form-group">
+            <label class="control-label">
+                Professor:
+            </label>
+            <div class="form-control-static">
+                {{turmaCompleta.nomeProfessor}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" data-ng-show="turmaCompleta">
+        <div class="input-group">
+            <label class="control-label">
+                Vagas:
+            </label>
+            <div class="form-control-static">
+                {{turmaCompleta.vagasOcupadas}} / {{turmaCompleta.vagas}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" data-ng-show="turmaCompleta">
+        <div class="input-group">
+            <label class="control-label">
+                Turno:
+            </label>
+            <div class="form-control-static">
+                {{turmaCompleta.turno}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="row" data-ng-show="turmaCompleta">
+    <div class="col-sm-12">
+        <table class="table table-hover in">
+            <caption>Alunos Inscritos</caption>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th class="hidden-sm hidden-xs">Data</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="inscricao in turmaCompleta.inscricoes">
+                    <td>{{inscricao.aluno.nome}}</td>
+                    <td class="hidden-sm  hidden-xs">{{inscricao.data | date}}</td>
+                    <td>{{inscricao.status}}</td>
+                    <td>
+                        <a class="btn btn-success" data-ng-click="aprovar(inscricao.aluno)" data-tooltip="Aprovar"  data-ng-if="inscricao.status==='PENDENTE'">
+                            <i class="glyphicon glyphicon-check"></i>
+                        </a>
+                        <a class="btn btn-danger" data-ng-click="reprovar(inscricao.aluno)" data-tooltip="Reprovar" data-ng-if="inscricao.status==='PENDENTE'">
+                            <i class="glyphicon glyphicon-warning-sign"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

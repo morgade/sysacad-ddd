@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/sysacad" disableURLRewriting="true">
+  <Resource auth="Container" driverClassName="org.apache.derby.jdbc.ClientDriver" 
+            type="javax.sql.DataSource" 
+            name="sysacadDS" 
+            url="jdbc:derby://localhost:1527/sample" 
+            username="app"
+            password="app" />
+  <session-config>
+    <tracking-mode>COOKIE</tracking-mode>
+</session-config>
+</Context>
