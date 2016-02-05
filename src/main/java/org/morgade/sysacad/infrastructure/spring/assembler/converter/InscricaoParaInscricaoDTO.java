@@ -1,6 +1,6 @@
 package org.morgade.sysacad.infrastructure.spring.assembler.converter;
 
-import org.morgade.sysacad.application.Assembler;
+import org.morgade.sysacad.domain.shared.Assembler;
 import org.morgade.sysacad.application.dto.AlunoDTO;
 import org.morgade.sysacad.application.dto.InscricaoDTO;
 import org.morgade.sysacad.domain.model.turma.Inscricao;

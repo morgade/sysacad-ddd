@@ -1,4 +1,4 @@
-package org.morgade.sysacad.application;
+package org.morgade.sysacad.domain.shared;
 
 import java.util.Collection;
 import java.util.List;

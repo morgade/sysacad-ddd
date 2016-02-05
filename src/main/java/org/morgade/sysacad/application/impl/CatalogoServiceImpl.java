@@ -3,7 +3,7 @@ package org.morgade.sysacad.application.impl;
 import java.util.List;
 import org.morgade.sysacad.application.CatalogoService;
 import org.morgade.sysacad.application.dto.AlunoDTO;
-import org.morgade.sysacad.application.Assembler;
+import org.morgade.sysacad.domain.shared.Assembler;
 import org.morgade.sysacad.application.dto.CursoDTO;
 import org.morgade.sysacad.application.dto.DisciplinaDTO;
 import org.morgade.sysacad.application.dto.TurmaBaseDTO;
