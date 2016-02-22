@@ -50,16 +50,4 @@
 
     <!-- interceptors -->
     <bean id="delegationInterceptor" class="org.morgade.sysacad.infrastructure.spring.DelegationInterceptor"/>
-
-    <bean id="sysacadEndpoint" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <property name="proxyInterfaces">
-            <value>org.morgade.sysacad.interfaces.SysacadEndpoint</value>
-        </property>
-        <property name="interceptorNames">
-            <list>
-                <value>delegationInterceptor</value>
-            </list>
-        </property>
-    </bean>
-    
 </beans>
