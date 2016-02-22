@@ -57,18 +57,13 @@ function(sysacad, angular) {
                                 JsonRpc.requesting.active--;
 
                                 if (response.data.error) {
-                                    if (response.data.error.message.indexOf('fcorp.exception.notauthenticated') === 0) {
-                                        $window.alert('A sua sessão no sistema expirou.\nVocê será redirecionado à tela inicial');
-                                        $window.location.reload();
-                                    } else {
-                                        toaster.pop('error', 'Erro', response.data.error.message);
-                                        // Dump da stack-trace
-                                        if (angular.isArray(response.data.error.data)) {
-                                            $log.warn("---------------------------   Dump de exceção no servidor   ----------------------------");
-                                            for (var i = 0; i < response.data.error.data.length; i++) {
-                                                var s = response.data.error.data[i];
-                                                $log.warn(s.className + "." + s.methodName + " na linha " + s.lineNumber);
-                                            }
+                                    toaster.pop('error', 'Erro', response.data.error.message);
+                                    // Dump da stack-trace
+                                    if (angular.isArray(response.data.error.data)) {
+                                        $log.warn("---------------------------   Dump de exceção no servidor   ----------------------------");
+                                        for (var i = 0; i < response.data.error.data.length; i++) {
+                                            var s = response.data.error.data[i];
+                                            $log.warn(s.className + "." + s.methodName + " na linha " + s.lineNumber);
                                         }
                                     }
                                     return $q.reject(response.data.error.message);

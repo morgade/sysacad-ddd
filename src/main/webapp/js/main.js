@@ -16,15 +16,7 @@ requirejs.config({
         'moment-pt-br': 'lib/moment/2.10.6/locale/pt-br',
         'datetimepicker': 'lib/datetimepicker/0.3.13/datetimepicker',
         'bootstrap': 'lib/bootstrap/3.2.0/bootstrap.min',
-        'toaster': 'lib/angularjs-toaster/0.4.7/toaster',
-        'snarf': 'lib/snarf/1.0.0/snarf',
-        'snarf-ca4': 'lib/snarf/1.0.0/snarf-ca4',
-        'snarf-cookies': 'lib/snarf/1.0.0/snarf-cookies',
-        'snarf-filters': 'lib/snarf/1.0.0/snarf-filters',
-        'snarf-input-text': 'lib/snarf/1.0.0/snarf-input-text',
-        'snarf-interceptors': 'lib/snarf/1.0.0/snarf-interceptors',
-        'snarf-directives': 'lib/snarf/1.0.0/snarf-directives',
-        'webcam': 'lib/webcam/1.0.2/webcam'
+        'toaster': 'lib/angularjs-toaster/0.4.7/toaster'
     },
     shim: {
         'angular':           {exports: 'angular'},
